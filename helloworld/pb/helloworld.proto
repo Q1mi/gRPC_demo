@@ -1,0 +1,20 @@
+syntax = "proto3"; // 版本声明，使用Protocol Buffers v3版本
+
+package pb; // 包名
+
+
+// 定义一个打招呼服务
+service Greeter {
+    // SayHello 方法
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// 包含人名的一个请求消息
+message HelloRequest {
+    string name = 1;
+}
+
+// 包含问候语的响应消息
+message HelloReply {
+    string message = 1;
+}
